@@ -1,18 +1,19 @@
 
-#ifdef __SKYTREE_COMPONENT_H_
+#ifndef __SKYTREE_COMPONENT_H_
 #define __SKYTREE_COMPONENT_H_
-US_ST_B
 
-class Component {
+#include "Macro.h"
+#include "Object.hpp"
+
+ST_NS_B
+
+class Component : public Object {
 public:
 	Component();
 	~Component();
 
-	// get component id
 	int getID();
-
-	
 };
 
-US_ST_E
+ST_NS_E
 #endif

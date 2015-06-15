@@ -1,9 +1,9 @@
 
-#ifdef __SKYTREE_H__
+#ifndef __SKYTREE_H__
 #define __SKYTREE_H__
-#pragma once
 
 #include "Macro.h"
+#include "Node.hpp"
 
 
 #endif

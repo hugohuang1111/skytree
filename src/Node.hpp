@@ -1,16 +1,18 @@
 
-#ifdef __SKYTREE_NODE_H_
+#ifndef __SKYTREE_NODE_H_
 #define __SKYTREE_NODE_H_
-US_ST_B
 
-class Node {
+#include "Object.hpp"
+#include "Macro.h"
+
+ST_NS_B
+
+class Node : public Object {
 public:
 	Node();
 	~Node();
-
-	//component related
-
 };
 
-US_ST_E
+ST_NS_E
+
 #endif
