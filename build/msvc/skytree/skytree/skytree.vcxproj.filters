@@ -36,13 +36,19 @@
     <ClInclude Include="..\..\..\..\src\Component.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\src\temp.hpp">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\..\src\GLView.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\src\platform\GLViewWin.hpp">
+    <ClInclude Include="..\..\..\..\src\Application.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\Common.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\platform\win32\Application-win32.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\platform\CCPlatformDefine.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -59,16 +65,16 @@
     <ClCompile Include="..\..\..\..\src\Component.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\src\temp.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\src\GLView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\src\platform\GLViewWin.cpp">
+    <ClCompile Include="..\..\..\..\src\Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\platform\win32\Application-win32.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

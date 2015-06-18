@@ -19,7 +19,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -44,6 +44,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -64,25 +65,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\src\Application.hpp" />
+    <ClInclude Include="..\..\..\..\src\Common.hpp" />
     <ClInclude Include="..\..\..\..\src\Component.hpp" />
     <ClInclude Include="..\..\..\..\src\GLView.hpp" />
     <ClInclude Include="..\..\..\..\src\Macro.h" />
     <ClInclude Include="..\..\..\..\src\Node.hpp" />
     <ClInclude Include="..\..\..\..\src\Object.hpp" />
-    <ClInclude Include="..\..\..\..\src\platform\GLViewWin.hpp" />
+    <ClInclude Include="..\..\..\..\src\platform\CCPlatformDefine.h" />
+    <ClInclude Include="..\..\..\..\src\platform\win32\Application-win32.h" />
     <ClInclude Include="..\..\..\..\src\SkyTree.h" />
-    <ClInclude Include="..\..\..\..\src\temp.hpp" />
     <ClInclude Include="..\..\..\..\src\UUID.hpp" />
     <ClInclude Include="skytree.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\src\Application.cpp" />
     <ClCompile Include="..\..\..\..\src\Component.cpp" />
     <ClCompile Include="..\..\..\..\src\GLView.cpp" />
     <ClCompile Include="..\..\..\..\src\main.cpp" />
     <ClCompile Include="..\..\..\..\src\Node.cpp" />
     <ClCompile Include="..\..\..\..\src\Object.cpp" />
-    <ClCompile Include="..\..\..\..\src\platform\GLViewWin.cpp" />
-    <ClCompile Include="..\..\..\..\src\temp.cpp" />
+    <ClCompile Include="..\..\..\..\src\platform\win32\Application-win32.cpp" />
     <ClCompile Include="..\..\..\..\src\UUID.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
