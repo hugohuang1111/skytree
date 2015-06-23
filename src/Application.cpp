@@ -13,6 +13,19 @@ void Application::setStartupScript(const std::string& startupScriptFile) {
 	_startupScript = startupScriptFile;
 }
 
+void Application::initGLContextAttrs() {
+}
+
+bool Application::launched() {
+	return SUCCESS;
+}
+
+void Application::suspend() {
+}
+
+void Application::resume() {
+}
+
 ST_NS_E
 
 

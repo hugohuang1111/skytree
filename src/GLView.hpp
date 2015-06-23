@@ -14,6 +14,7 @@ public:
     virtual void end() = 0;
     virtual bool isOpenGLReady() = 0;
     virtual bool windowShouldClose() = 0;
+    virtual void pollEvents();
 };
 
 

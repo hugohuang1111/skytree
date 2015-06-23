@@ -8,8 +8,8 @@ ST_NS_B
 
 class Temp {
 public:
-	Temp();
-	~Temp();
+    Temp();
+    ~Temp();
 };
 
 ST_NS_E

@@ -4,6 +4,7 @@
 
 #include "Macro.h"
 #include "Node.hpp"
+#include "Application.hpp"
 
 
 #endif

@@ -68,12 +68,16 @@
     <ClInclude Include="..\..\..\..\src\Application.hpp" />
     <ClInclude Include="..\..\..\..\src\Common.hpp" />
     <ClInclude Include="..\..\..\..\src\Component.hpp" />
+    <ClInclude Include="..\..\..\..\src\Director.hpp" />
     <ClInclude Include="..\..\..\..\src\GLView.hpp" />
+    <ClInclude Include="..\..\..\..\src\Log.hpp" />
     <ClInclude Include="..\..\..\..\src\Macro.h" />
     <ClInclude Include="..\..\..\..\src\Node.hpp" />
     <ClInclude Include="..\..\..\..\src\Object.hpp" />
     <ClInclude Include="..\..\..\..\src\platform\CCPlatformDefine.h" />
-    <ClInclude Include="..\..\..\..\src\platform\win32\Application-win32.h" />
+    <ClInclude Include="..\..\..\..\src\platform\win32\Application-win32.hpp" />
+    <ClInclude Include="..\..\..\..\src\platform\win32\GLView-win32.hpp" />
+    <ClInclude Include="..\..\..\..\src\Ref.hpp" />
     <ClInclude Include="..\..\..\..\src\SkyTree.h" />
     <ClInclude Include="..\..\..\..\src\UUID.hpp" />
     <ClInclude Include="skytree.h" />
@@ -81,11 +85,15 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\..\src\Application.cpp" />
     <ClCompile Include="..\..\..\..\src\Component.cpp" />
+    <ClCompile Include="..\..\..\..\src\Director.cpp" />
     <ClCompile Include="..\..\..\..\src\GLView.cpp" />
+    <ClCompile Include="..\..\..\..\src\Log.cpp" />
     <ClCompile Include="..\..\..\..\src\main.cpp" />
     <ClCompile Include="..\..\..\..\src\Node.cpp" />
     <ClCompile Include="..\..\..\..\src\Object.cpp" />
     <ClCompile Include="..\..\..\..\src\platform\win32\Application-win32.cpp" />
+    <ClCompile Include="..\..\..\..\src\platform\win32\GLView-win32.cpp" />
+    <ClCompile Include="..\..\..\..\src\Ref.cpp" />
     <ClCompile Include="..\..\..\..\src\UUID.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

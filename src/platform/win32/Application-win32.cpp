@@ -1,13 +1,14 @@
 
-#include <windows.h>
 #include <tchar.h>
+#include "../../Director.hpp"
 
 //#include <WinNls.h>
 //#include <winreg.h>
 //#include <shellapi.h>
 //#include <winerror.h>
 
-#include "Application-win32.h"
+#include "Application-win32.hpp"
+#include "GLView-win32.hpp"
 
 
 ST_NS_B
@@ -50,6 +51,15 @@ static void PVRFrameEnableControlWindow(bool bEnable)
 static ApplicationWin* _Application = nullptr;
 
 
+ApplicationWin::ApplicationWin() {
+    memset(&_animationInterval, 0, sizeof(_animationInterval));
+    QueryPerformanceFrequency(&_animationInterval);
+    _animationInterval.QuadPart = (LONGLONG)(_animationInterval.QuadPart * 1 / 60);
+
+    GLView* view = new GLViewWin();
+    Director::getInstance()->setOpenGLView(view);
+}
+
 ApplicationWin::~ApplicationWin() {
 }
 
@@ -72,44 +82,35 @@ int ApplicationWin::run() {
 
 	QueryPerformanceCounter(&nLast);
 
-	//initGLContextAttrs();
+	initGLContextAttrs();
 
-	//// Initialize instance and cocos2d.
-	//if (!applicationDidFinishLaunching())
-	//{
-	//	return 1;
-	//}
+	// Initialize instance and cocos2d.
+	if (SUCCESS != launched())
+	{
+		return FAIL;
+	}
 
-	//auto director = Director::getInstance();
-	//auto glview = director->getOpenGLView();
+	auto director = Director::getInstance();
+	auto glview = director->getOpenGLView();
 
-	//// Retain glview to avoid glview being released in the while loop
-	//glview->retain();
+	while (!glview->windowShouldClose()) {
+		QueryPerformanceCounter(&nNow);
+		if (nNow.QuadPart - nLast.QuadPart > _animationInterval.QuadPart) {
+			nLast.QuadPart = nNow.QuadPart - (nNow.QuadPart % _animationInterval.QuadPart);
+			director->loop();
+			glview->pollEvents();
+		}
+		else
+		{
+			Sleep(1);
+		}
+	}
 
-	//while (!glview->windowShouldClose())
-	//{
-	//	QueryPerformanceCounter(&nNow);
-	//	if (nNow.QuadPart - nLast.QuadPart > _animationInterval.QuadPart)
-	//	{
-	//		nLast.QuadPart = nNow.QuadPart - (nNow.QuadPart % _animationInterval.QuadPart);
-
-	//		director->mainLoop();
-	//		glview->pollEvents();
-	//	}
-	//	else
-	//	{
-	//		Sleep(1);
-	//	}
-	//}
-
-	//// Director should still do a cleanup if the window was closed manually.
-	//if (glview->isOpenGLReady())
-	//{
-	//	director->end();
-	//	director->mainLoop();
-	//	director = nullptr;
-	//}
-	//glview->release();
+	if (glview->isOpenGLReady())
+	{
+		director->end();
+		director = nullptr;
+	}
 	return 0;
 }
 
@@ -130,6 +131,12 @@ Lang ApplicationWin::getCurrentLanguage() {
 
 Platform ApplicationWin::getTargetPlatform() {
 	return Platform::PF_WINDOWS;
+}
+
+void ApplicationWin::setAnimationInterval(double interval) {
+	LARGE_INTEGER nFreq;
+	QueryPerformanceFrequency(&nFreq);
+	_animationInterval.QuadPart = (LONGLONG)(interval * nFreq.QuadPart);
 }
 
 ST_NS_E

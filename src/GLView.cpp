@@ -9,5 +9,8 @@ GLView::GLView() {
 GLView::~GLView() {
 }
 
+void GLView::pollEvents() {
+}
+
 
 ST_NS_E

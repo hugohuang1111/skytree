@@ -8,5 +8,8 @@
 #define US_NS_SKYTREE using namespace skytree
 
 
+#define SUCCESS     0
+#define FAIL        1
+
 #endif
 
