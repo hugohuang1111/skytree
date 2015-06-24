@@ -2,6 +2,7 @@
 #ifndef __SKYTREE_PLATFORM_Define_H_
 #define __SKYTREE_PLATFORM_Define_H_
 
+#include <assert.h>
 
 #define ST_PLATFORM_UNKNOWN            0
 #define ST_PLATFORM_WIN32              1
@@ -26,6 +27,11 @@
 #if ! ST_TARGET_PLATFORM
     #error  "Cannot recognize the target platform; are you targeting an unsupported platform?"
 #endif 
+
+#if ST_TARGET_PLATFORM == ST_PLATFORM_WIN32
+#define ST_ASSERT(cond)         assert(cond)
+#else
+#endif
 
 
 #endif
